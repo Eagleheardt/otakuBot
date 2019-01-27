@@ -15,13 +15,13 @@ from cryptography.fernet import Fernet
 conn = sqlite3.connect('otakuBot/data/anime.db')
 serverCursor = conn.cursor()
 
-keyFile = open('otakuBot/data/snek_token.key', 'rb')
+keyFile = open('otakuBot/data/otakubot_token.key', 'rb')
 key = keyFile.read()
 keyFile.close()
 
 f = Fernet(key)
 
-encryptedTokenFile = open('otakuBot/data/snek_token.encrypted', 'rb')
+encryptedTokenFile = open('otakuBot/data/otakubot_token.encrypted', 'rb')
 encryptedToken = encryptedTokenFile.read()
 
 decryptedToken = f.decrypt(encryptedToken)
@@ -55,7 +55,7 @@ def logIt():
 schedule.every(15).minutes.do(logIt)
 
 def SQLReturn(aConn,sqlCmd):
-	reportCur = aConn.cursor()0
+	reportCur = aConn.cursor()
 	reportCur.execute(sqlCmd)
 	SQLResults = reportCur.fetchall()
 	reportCur.close()
