@@ -1,3 +1,3 @@
-SQLite version 3.22.0 2018-01-22 18:45:57
-Enter ".help" for usage hints.
-sqlite> [Ksqlite> [Ksqlite> .quit^C^Z
+CREATE TABLE Quotes (ID INTEGER PRIMARY KEY AUTOINCREMENT, TimeStamp DATE DEFAULT (DATETIME('now','localtime')), User TEXT NOT NULL DEFAULT 'NONE', Words TEXT NOT NULL DEFAULT 'Quote not found!');
+CREATE TABLE sqlite_sequence(name,seq);
+CREATE TABLE Music (ID INTEGER PRIMARY KEY AUTOINCREMENT, TimeStamp DATE DEFAULT (DATETIME('now','localtime')),User TEXT NOT NULL DEFAULT 'NONE', Category TEXT NOT NULL DEFAULT 'NONE', Link TEXT NOT NULL DEFAULT 'https://www.google.com');
