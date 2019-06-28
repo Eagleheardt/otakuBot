@@ -12,16 +12,16 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from slackclient import SlackClient
 from cryptography.fernet import Fernet
 
-conn = sqlite3.connect('otakuBot/data/anime.db')
+conn = sqlite3.connect('/home/ubuntu/otakuBot/data/anime.db')
 serverCursor = conn.cursor()
 
-keyFile = open('otakuBot/data/otakubot_token.key', 'rb')
+keyFile = open('/home/ubuntu/otakuBot/data/otakubot_token.key', 'rb')
 key = keyFile.read()
 keyFile.close()
 
 f = Fernet(key)
 
-encryptedTokenFile = open('otakuBot/data/otakubot_token.encrypted', 'rb')
+encryptedTokenFile = open('/home/ubuntu/otakuBot/data/otakubot_token.encrypted', 'rb')
 encryptedToken = encryptedTokenFile.read()
 
 decryptedToken = f.decrypt(encryptedToken)
